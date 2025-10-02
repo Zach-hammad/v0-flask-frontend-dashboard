@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}System Monitor - Vision Processor{% endblock %}
+
+{% block content %}
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">System Monitor</h2>
+
+    <div id="metrics-container"
+         hx-get="{{ url_for('monitor.metrics') }}"
+         hx-trigger="every 5s"
+         hx-swap="innerHTML">
+        <p class="text-gray-500">Loading metrics...</p>
+    </div>
+</div>
+{% endblock %}

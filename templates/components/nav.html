@@ -1,0 +1,33 @@
+<nav class="bg-white shadow-sm" x-data="{ mobileMenuOpen: false }">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 justify-between">
+            <div class="flex">
+                <div class="flex flex-shrink-0 items-center">
+                    <h1 class="text-xl font-bold text-gray-900">Vision Processor</h1>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="{{ url_for('dashboard.index') }}"
+                       class="inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium
+                              {% if request.endpoint == 'dashboard.index' %}border-indigo-500 text-gray-900{% else %}border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700{% endif %}">
+                        Dashboard
+                    </a>
+                    <a href="{{ url_for('process.index') }}"
+                       class="inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium
+                              {% if request.endpoint == 'process.index' %}border-indigo-500 text-gray-900{% else %}border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700{% endif %}">
+                        Process Video
+                    </a>
+                    <a href="{{ url_for('monitor.index') }}"
+                       class="inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium
+                              {% if request.endpoint == 'monitor.index' %}border-indigo-500 text-gray-900{% else %}border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700{% endif %}">
+                        Monitor
+                    </a>
+                    <a href="{{ url_for('results.index') }}"
+                       class="inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium
+                              {% if request.endpoint == 'results.index' %}border-indigo-500 text-gray-900{% else %}border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700{% endif %}">
+                        Results
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
